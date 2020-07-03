@@ -15,7 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        if let navigationController = window?.rootViewController as? UINavigationController,
+            let mainController = navigationController.topViewController as? ShoppingListViewController {
+            let network = Network.init()
+            let networkRequest = NetworkRequest.init(network)
+            mainController.viewModel = ShoppingListViewModel.init(networkRequest, delegate: mainController)
+        }
         return true
     }
 
