@@ -16,6 +16,7 @@
 		FA065C5924AE88E500A1B34F /* ShoppingListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA065C5824AE88E500A1B34F /* ShoppingListTests.swift */; };
 		FA065C6424AE88E500A1B34F /* ShoppingListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA065C6324AE88E500A1B34F /* ShoppingListUITests.swift */; };
 		FA065C7324AE8A3600A1B34F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FA065C7224AE8A3600A1B34F /* Alamofire */; };
+		FA065C7624AF0F6900A1B34F /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = FA065C7524AF0F6900A1B34F /* Swinject */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA065C7324AE8A3600A1B34F /* Alamofire in Frameworks */,
+				FA065C7624AF0F6900A1B34F /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +150,7 @@
 			name = ShoppingList;
 			packageProductDependencies = (
 				FA065C7224AE8A3600A1B34F /* Alamofire */,
+				FA065C7524AF0F6900A1B34F /* Swinject */,
 			);
 			productName = ShoppingList;
 			productReference = FA065C3B24AE88E400A1B34F /* ShoppingList.app */;
@@ -223,6 +226,7 @@
 			mainGroup = FA065C3224AE88E400A1B34F;
 			packageReferences = (
 				FA065C7124AE8A3600A1B34F /* XCRemoteSwiftPackageReference "Alamofire" */,
+				FA065C7424AF0F6900A1B34F /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = FA065C3C24AE88E400A1B34F /* Products */;
 			projectDirPath = "";
@@ -604,6 +608,14 @@
 				minimumVersion = 5.2.1;
 			};
 		};
+		FA065C7424AF0F6900A1B34F /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -611,6 +623,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA065C7124AE8A3600A1B34F /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		FA065C7524AF0F6900A1B34F /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA065C7424AF0F6900A1B34F /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
 		};
 /* End XCSwiftPackageProductDependency section */
 
