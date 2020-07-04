@@ -11,4 +11,3 @@ import UIKit
 public protocol Networking {
     func getJSON<T: Codable>(url: String,  handler: @escaping (_ result: Result<T, Error>) -> Void)
 }
-

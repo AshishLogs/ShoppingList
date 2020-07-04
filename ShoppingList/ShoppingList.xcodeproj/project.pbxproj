@@ -25,6 +25,11 @@
 		FA065C9824AF83E500A1B34F /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA065C9724AF83E500A1B34F /* ReusableView.swift */; };
 		FA065C9B24AF844400A1B34F /* ShoppingListReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA065C9924AF844400A1B34F /* ShoppingListReusableCell.swift */; };
 		FA065C9C24AF844400A1B34F /* ShoppingListReusableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA065C9A24AF844400A1B34F /* ShoppingListReusableCell.xib */; };
+		FA065C9E24B0746E00A1B34F /* CoreDataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA065C9D24B0746E00A1B34F /* CoreDataWrapper.swift */; };
+		FA065CA124B111AB00A1B34F /* UICollectionViewCell+HelperClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA065CA024B111AB00A1B34F /* UICollectionViewCell+HelperClass.swift */; };
+		FA065CA424B1130800A1B34F /* FilterListReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA065CA224B1130800A1B34F /* FilterListReusableCell.swift */; };
+		FA065CA524B1130800A1B34F /* FilterListReusableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA065CA324B1130800A1B34F /* FilterListReusableCell.xib */; };
+		FA065CA724B1237D00A1B34F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA065CA624B1237D00A1B34F /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +74,11 @@
 		FA065C9724AF83E500A1B34F /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		FA065C9924AF844400A1B34F /* ShoppingListReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListReusableCell.swift; sourceTree = "<group>"; };
 		FA065C9A24AF844400A1B34F /* ShoppingListReusableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoppingListReusableCell.xib; sourceTree = "<group>"; };
+		FA065C9D24B0746E00A1B34F /* CoreDataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWrapper.swift; sourceTree = "<group>"; };
+		FA065CA024B111AB00A1B34F /* UICollectionViewCell+HelperClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+HelperClass.swift"; sourceTree = "<group>"; };
+		FA065CA224B1130800A1B34F /* FilterListReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterListReusableCell.swift; sourceTree = "<group>"; };
+		FA065CA324B1130800A1B34F /* FilterListReusableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterListReusableCell.xib; sourceTree = "<group>"; };
+		FA065CA624B1237D00A1B34F /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +129,7 @@
 		FA065C3D24AE88E400A1B34F /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
+				FA065CA824B1237F00A1B34F /* Helper */,
 				FA065C3E24AE88E400A1B34F /* AppDelegate.swift */,
 				FA065C4424AE88E400A1B34F /* Main.storyboard */,
 				FA065C4A24AE88E500A1B34F /* Assets.xcassets */,
@@ -130,6 +141,7 @@
 				FA065C8C24AF480600A1B34F /* ShoppingController */,
 				FA065C8F24AF4F3C00A1B34F /* ShoppingListViewModel */,
 				FA065C9624AF83B500A1B34F /* ReusableCell */,
+				FA065C9F24B0758300A1B34F /* PersistantData */,
 			);
 			path = ShoppingList;
 			sourceTree = "<group>";
@@ -194,8 +206,27 @@
 				FA065C9724AF83E500A1B34F /* ReusableView.swift */,
 				FA065C9924AF844400A1B34F /* ShoppingListReusableCell.swift */,
 				FA065C9A24AF844400A1B34F /* ShoppingListReusableCell.xib */,
+				FA065CA024B111AB00A1B34F /* UICollectionViewCell+HelperClass.swift */,
+				FA065CA224B1130800A1B34F /* FilterListReusableCell.swift */,
+				FA065CA324B1130800A1B34F /* FilterListReusableCell.xib */,
 			);
 			path = ReusableCell;
+			sourceTree = "<group>";
+		};
+		FA065C9F24B0758300A1B34F /* PersistantData */ = {
+			isa = PBXGroup;
+			children = (
+				FA065C9D24B0746E00A1B34F /* CoreDataWrapper.swift */,
+			);
+			path = PersistantData;
+			sourceTree = "<group>";
+		};
+		FA065CA824B1237F00A1B34F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FA065CA624B1237D00A1B34F /* CardView.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA065C9C24AF844400A1B34F /* ShoppingListReusableCell.xib in Resources */,
+				FA065CA524B1130800A1B34F /* FilterListReusableCell.xib in Resources */,
 				FA065C4E24AE88E500A1B34F /* LaunchScreen.storyboard in Resources */,
 				FA065C4B24AE88E500A1B34F /* Assets.xcassets in Resources */,
 				FA065C4624AE88E400A1B34F /* Main.storyboard in Resources */,
@@ -335,16 +367,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA065C9324AF5F3000A1B34F /* Constants.swift in Sources */,
+				FA065CA124B111AB00A1B34F /* UICollectionViewCell+HelperClass.swift in Sources */,
 				FA065C7F24AF272D00A1B34F /* Network.swift in Sources */,
 				FA065C9524AF838800A1B34F /* UITableView+HelperClass.swift in Sources */,
 				FA065C8324AF41EC00A1B34F /* ShoppingListModel.swift in Sources */,
 				FA065C9B24AF844400A1B34F /* ShoppingListReusableCell.swift in Sources */,
+				FA065C9E24B0746E00A1B34F /* CoreDataWrapper.swift in Sources */,
 				FA065C9824AF83E500A1B34F /* ReusableView.swift in Sources */,
 				FA065C4924AE88E400A1B34F /* ShoppingList.xcdatamodeld in Sources */,
+				FA065CA424B1130800A1B34F /* FilterListReusableCell.swift in Sources */,
 				FA065C8E24AF4F2700A1B34F /* ShoppingListViewModel.swift in Sources */,
 				FA065C8B24AF47FD00A1B34F /* ShoppingListViewController.swift in Sources */,
 				FA065C3F24AE88E400A1B34F /* AppDelegate.swift in Sources */,
 				FA065C8124AF41B400A1B34F /* NetworkRequest.swift in Sources */,
+				FA065CA724B1237D00A1B34F /* CardView.swift in Sources */,
 				FA065C7C24AF173700A1B34F /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
