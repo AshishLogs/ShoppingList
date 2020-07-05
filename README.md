@@ -1,6 +1,6 @@
 # ShoppingList
 
-I have several development concepts. Majorly focused on the below points
+I have used several development concepts. Majorly focused on the below points
 
   1. Design Model - MVVM Model & POP (Protocol Oriented Programming)
   2. Dependency Injection - I have write a code in accordance with Dependency Injection concept.
