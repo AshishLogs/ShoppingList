@@ -7,3 +7,4 @@ I have used several development concepts. Majorly focused on the below points
   3. Single Responsibility Principle - Majorly focused on this principle.
   4. Memory Leakage - 0 memory leaks maintained in the project.
   5. No third party library integrated (Networking class & Dependency Code is maintained in code itself without 3rd party).
+  6. maintained network UI test case (Offline & Online model)
