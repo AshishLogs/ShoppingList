@@ -31,6 +31,7 @@
 		FA065CA524B1130800A1B34F /* FilterListReusableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA065CA324B1130800A1B34F /* FilterListReusableCell.xib */; };
 		FA065CA724B1237D00A1B34F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA065CA624B1237D00A1B34F /* CardView.swift */; };
 		FA065CC324B1C68500A1B34F /* ShoppingProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA065CC224B1C68400A1B34F /* ShoppingProductDetailViewController.swift */; };
+		FA065CD124B1E6A500A1B34F /* ShoppingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA065CD024B1E6A500A1B34F /* ShoppingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		FA065CA324B1130800A1B34F /* FilterListReusableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterListReusableCell.xib; sourceTree = "<group>"; };
 		FA065CA624B1237D00A1B34F /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		FA065CC224B1C68400A1B34F /* ShoppingProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingProductDetailViewController.swift; sourceTree = "<group>"; };
+		FA065CD024B1E6A500A1B34F /* ShoppingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			children = (
 				FA065C5824AE88E500A1B34F /* ShoppingListTests.swift */,
 				FA065C5A24AE88E500A1B34F /* Info.plist */,
+				FA065CD024B1E6A500A1B34F /* ShoppingViewModel.swift */,
 			);
 			path = ShoppingListTests;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA065CD124B1E6A500A1B34F /* ShoppingViewModel.swift in Sources */,
 				FA065C5924AE88E500A1B34F /* ShoppingListTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
