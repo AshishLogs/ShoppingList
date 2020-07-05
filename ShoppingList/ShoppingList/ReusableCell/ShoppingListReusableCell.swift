@@ -55,5 +55,10 @@ class ShoppingListReusableCell: UITableViewCell, ReusableView, NibLoadableView {
         dateValue.text = String.init(format: ":    %@", categories.dateAdded ?? "")
         taxValue.text = String.init(format: ":    %0.2f", categories.tax?.value ?? "")
     }
+    @IBOutlet weak var viewCount: UILabel!
+    
+    func viewCount(_ name: String?, count: String?) {
+        viewCount.text = "\(name ?? "") : \(count ?? "")"
+    }
     
 }

@@ -63,7 +63,7 @@ struct Variant: Codable {
 // MARK: - Ranking
 struct Ranking: Codable {
     let ranking: String?
-    let products: [RankingProduct]?
+    var products: [RankingProduct]?
 }
 
 // MARK: - RankingProduct

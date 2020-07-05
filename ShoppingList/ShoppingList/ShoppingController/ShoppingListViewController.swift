@@ -69,6 +69,7 @@ extension ShoppingListViewController: UITableViewDelegate, UITableViewDataSource
         if let count = viewModel?.rows(section), count <= 0 {
             return 0.0
         }
+        if viewModel?.currentRanking != nil { return 0 }
         return 50.0
     }
     
@@ -84,7 +85,13 @@ extension ShoppingListViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : ShoppingListReusableCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-        cell.category(viewModel!.shoppingModel!.categories![indexPath.section].products![indexPath.row])
+        if let rank = viewModel?.currentRanking {
+            cell.category(viewModel!.filterObjects![indexPath.row])
+            cell.viewCount(rank.ranking, count: "\(rank.products!.first(where: {$0.id == viewModel!.filterObjects![indexPath.row].id })?.viewCount ?? 0)")
+        } else {
+            cell.category(viewModel!.shoppingModel!.categories![indexPath.section].products![indexPath.row])
+            cell.viewCount(nil, count: nil)
+        }
         return cell
     }
     
@@ -126,6 +133,7 @@ extension ShoppingListViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let model = viewModel else { return  }
         model.currentRank(indexPath.row)
+        model.filteredRow()
     }
     
 }

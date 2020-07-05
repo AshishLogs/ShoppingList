@@ -100,14 +100,22 @@
                             <color key="titleColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBH-t7-ojx">
+                        <rect key="frame" x="20" y="118" width="31" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="VSV-sT-oRx" secondAttribute="bottom" constant="35" id="6Yi-eB-KDd"/>
                     <constraint firstItem="R6T-RX-rmv" firstAttribute="top" secondItem="VSV-sT-oRx" secondAttribute="bottom" constant="-15" id="AeV-Pf-Szm"/>
                     <constraint firstItem="VSV-sT-oRx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="ED3-wj-VjC"/>
                     <constraint firstItem="VSV-sT-oRx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Nsj-j9-CJp"/>
+                    <constraint firstItem="xBH-t7-ojx" firstAttribute="top" secondItem="VSV-sT-oRx" secondAttribute="bottom" id="Ste-32-Rq0"/>
                     <constraint firstAttribute="trailing" secondItem="VSV-sT-oRx" secondAttribute="trailing" constant="20" id="Uj9-Zx-fZS"/>
                     <constraint firstAttribute="trailing" secondItem="R6T-RX-rmv" secondAttribute="trailing" constant="20" id="Y98-H5-5DT"/>
+                    <constraint firstItem="xBH-t7-ojx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="fGz-7D-zQy"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -120,6 +128,7 @@
                 <outlet property="parentView" destination="VSV-sT-oRx" id="ckJ-yb-4Bg"/>
                 <outlet property="tax" destination="c22-CT-wl1" id="Yv3-an-8pc"/>
                 <outlet property="taxValue" destination="aju-kh-YqI" id="djC-fN-u08"/>
+                <outlet property="viewCount" destination="xBH-t7-ojx" id="YQy-Wa-SIE"/>
             </connections>
             <point key="canvasLocation" x="204.34782608695653" y="-1.6741071428571428"/>
         </tableViewCell>

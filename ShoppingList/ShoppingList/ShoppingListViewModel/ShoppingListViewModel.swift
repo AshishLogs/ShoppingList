@@ -38,6 +38,12 @@ public class ShoppingListViewModel {
         }
     }
     
+    var filterObjects : [CategoryProduct]? {
+        didSet {
+            self.delegate?.updateView()
+        }
+    }
+    
     init(_ manager: NetworkRequest, delegate: ShoppingListDelegate? = nil) {
         self.manager  = manager
         self.delegate = delegate
@@ -55,15 +61,39 @@ public class ShoppingListViewModel {
     }
     
     func sections() -> Int? {
+        if let _ = currentRanking {
+            return 1
+        }
+        
         return shoppingModel?.categories?.count
     }
     
     func rows(_ section: Int) -> Int? {
+        
+        if let _ = currentRanking {
+            return filterObjects?.count
+        }
+        
         guard let shopModel = shoppingModel else { return nil }
         return shopModel.categories?[section].products?.count
     }
     
+    func filteredRow() {
+        guard let shopModel = shoppingModel else { return }
+        guard let ranking = currentRanking else { return }
+        var arr : [CategoryProduct] = []
+        for element in ranking.products ?? [] {
+            for internalObj in shopModel.categories  ?? []{
+                if let nObj = internalObj.products?.filter({$0.id == element.id}) {
+                    arr.append(contentsOf: nObj)
+                }
+            }
+        }
+         filterObjects = arr
+    }
+    
     func sectionHeaderText(_ section: Int) -> String? {
+        if let _ = currentRanking { return nil }
         guard let shopModel = shoppingModel else { return nil }
         return shopModel.categories?[section].name
     }
