@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShoppingListViewController: UIViewController, ShoppingListDelegate {
+class ShoppingListViewController: UIViewController, ShoppingListDelegate, ShoppingListReusableCellDelegate {
 
     var viewModel : ShoppingListViewModel? {
         didSet {
@@ -48,6 +48,18 @@ class ShoppingListViewController: UIViewController, ShoppingListDelegate {
         }
     }
     
+    //MARK:- ShoppingListReusableCell
+    func productVariant(with index: IndexPath?) {
+        guard let indexPath = index else { return }
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ShoppingProductDetailViewController") as? ShoppingProductDetailViewController else { return }
+        if let _ = viewModel!.currentRanking {
+            vc.product = viewModel!.filterObjects![indexPath.row]
+        } else {
+            vc.product =  viewModel!.shoppingModel!.categories![indexPath.section].products![indexPath.row]
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 //MARK:- UITableViewDelegate & UITableViewDataSource
@@ -85,9 +97,17 @@ extension ShoppingListViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : ShoppingListReusableCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+        cell.index = indexPath
+        cell.delegate = self
         if let rank = viewModel?.currentRanking {
             cell.category(viewModel!.filterObjects![indexPath.row])
-            cell.viewCount(rank.ranking, count: "\(rank.products!.first(where: {$0.id == viewModel!.filterObjects![indexPath.row].id })?.viewCount ?? 0)")
+            if rank.ranking?.lowercased() == "Most Viewed Products".lowercased() {
+                cell.viewCount(rank.ranking, count: "\(rank.products!.first(where: {$0.id == viewModel!.filterObjects![indexPath.row].id })?.viewCount ?? 0)")
+            } else if rank.ranking?.lowercased() == "Most OrdeRed Products".lowercased() {
+                cell.viewCount(rank.ranking, count: "\(rank.products!.first(where: {$0.id == viewModel!.filterObjects![indexPath.row].id })?.orderCount ?? 0)")
+            } else {
+                cell.viewCount(rank.ranking, count: "\(rank.products!.first(where: {$0.id == viewModel!.filterObjects![indexPath.row].id })?.shares ?? 0)")
+            }
         } else {
             cell.category(viewModel!.shoppingModel!.categories![indexPath.section].products![indexPath.row])
             cell.viewCount(nil, count: nil)

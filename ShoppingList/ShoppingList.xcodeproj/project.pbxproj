@@ -30,6 +30,7 @@
 		FA065CA424B1130800A1B34F /* FilterListReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA065CA224B1130800A1B34F /* FilterListReusableCell.swift */; };
 		FA065CA524B1130800A1B34F /* FilterListReusableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA065CA324B1130800A1B34F /* FilterListReusableCell.xib */; };
 		FA065CA724B1237D00A1B34F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA065CA624B1237D00A1B34F /* CardView.swift */; };
+		FA065CC324B1C68500A1B34F /* ShoppingProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA065CC224B1C68400A1B34F /* ShoppingProductDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		FA065CA224B1130800A1B34F /* FilterListReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterListReusableCell.swift; sourceTree = "<group>"; };
 		FA065CA324B1130800A1B34F /* FilterListReusableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterListReusableCell.xib; sourceTree = "<group>"; };
 		FA065CA624B1237D00A1B34F /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		FA065CC224B1C68400A1B34F /* ShoppingProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingProductDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 		FA065C8C24AF480600A1B34F /* ShoppingController */ = {
 			isa = PBXGroup;
 			children = (
+				FA065CC224B1C68400A1B34F /* ShoppingProductDetailViewController.swift */,
 				FA065C8A24AF47FD00A1B34F /* ShoppingListViewController.swift */,
 			);
 			path = ShoppingController;
@@ -377,6 +380,7 @@
 				FA065C4924AE88E400A1B34F /* ShoppingList.xcdatamodeld in Sources */,
 				FA065CA424B1130800A1B34F /* FilterListReusableCell.swift in Sources */,
 				FA065C8E24AF4F2700A1B34F /* ShoppingListViewModel.swift in Sources */,
+				FA065CC324B1C68500A1B34F /* ShoppingProductDetailViewController.swift in Sources */,
 				FA065C8B24AF47FD00A1B34F /* ShoppingListViewController.swift in Sources */,
 				FA065C3F24AE88E400A1B34F /* AppDelegate.swift in Sources */,
 				FA065C8124AF41B400A1B34F /* NetworkRequest.swift in Sources */,

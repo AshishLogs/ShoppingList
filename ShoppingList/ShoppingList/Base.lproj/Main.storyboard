@@ -59,6 +59,37 @@
             </objects>
             <point key="canvasLocation" x="942.02898550724649" y="137.94642857142856"/>
         </scene>
+        <!--Shopping Product Detail View Controller-->
+        <scene sceneID="SCE-a2-dQ6">
+            <objects>
+                <viewController storyboardIdentifier="ShoppingProductDetailViewController" id="3Wf-H9-8rW" customClass="ShoppingProductDetailViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7yE-Cp-fJt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yoc-0I-bQE">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Yoc-0I-bQE" firstAttribute="top" secondItem="PPW-Ym-WVW" secondAttribute="top" id="79k-AL-e3Y"/>
+                            <constraint firstItem="PPW-Ym-WVW" firstAttribute="trailing" secondItem="Yoc-0I-bQE" secondAttribute="trailing" id="LUn-Kw-N97"/>
+                            <constraint firstItem="PPW-Ym-WVW" firstAttribute="bottom" secondItem="Yoc-0I-bQE" secondAttribute="bottom" id="UNe-UH-YHl"/>
+                            <constraint firstItem="Yoc-0I-bQE" firstAttribute="leading" secondItem="PPW-Ym-WVW" secondAttribute="leading" id="f1s-OG-gsd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PPW-Ym-WVW"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6QQ-RE-WFu"/>
+                    <connections>
+                        <outlet property="productTableView" destination="Yoc-0I-bQE" id="WDg-4v-B27"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tyT-lB-TyF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1638" y="138"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="naB-xa-YNz">
             <objects>
@@ -67,6 +98,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="wU2-7d-IDf">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.93333333330000001" green="0.25490196079999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

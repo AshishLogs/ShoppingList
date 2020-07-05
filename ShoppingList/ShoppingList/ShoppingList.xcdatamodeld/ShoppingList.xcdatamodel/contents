@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="18G103" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+    <entity name="ShoppingCDModel" representedClassName="ShoppingCDModel" syncable="YES" codeGenerationType="class">
+        <attribute name="categories" optional="YES" attributeType="Transformable"/>
+        <attribute name="rankings" optional="YES" attributeType="Transformable"/>
+    </entity>
+    <elements>
+        <element name="ShoppingCDModel" positionX="-45" positionY="0" width="128" height="73"/>
+    </elements>
 </model>

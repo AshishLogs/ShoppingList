@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol ShoppingListReusableCellDelegate: class {
+    func productVariant(with index: IndexPath?)
+}
+
 class ShoppingListReusableCell: UITableViewCell, ReusableView, NibLoadableView {
+    
+    weak var delegate : ShoppingListReusableCellDelegate?
 
     @IBOutlet weak var parentView: UIView!
     
@@ -21,6 +27,8 @@ class ShoppingListReusableCell: UITableViewCell, ReusableView, NibLoadableView {
     @IBOutlet weak var taxValue: UILabel!
     
     @IBOutlet weak var btnVariants: UIButton!
+    
+    var index : IndexPath?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,10 +54,11 @@ class ShoppingListReusableCell: UITableViewCell, ReusableView, NibLoadableView {
     }
     
     func category(_ categories: CategoryProduct) {
+        btnVariants.isHidden = false
         name.font = UIFont.systemFont(ofSize: 15.0, weight: .semibold)
         date.font = UIFont.systemFont(ofSize: 15.0, weight: .semibold)
         tax.font = UIFont.systemFont(ofSize: 15.0, weight: .semibold)
-        tax.text = "Tax (\(categories.tax?.name ?? Name.vat))"
+        tax.text = "Tax (\(categories.tax?.name ?? ""))"
         
         nameValue.text = String.init(format: ":    %@", categories.name ?? "")
         dateValue.text = String.init(format: ":    %@", categories.dateAdded ?? "")
@@ -58,7 +67,29 @@ class ShoppingListReusableCell: UITableViewCell, ReusableView, NibLoadableView {
     @IBOutlet weak var viewCount: UILabel!
     
     func viewCount(_ name: String?, count: String?) {
-        viewCount.text = "\(name ?? "") : \(count ?? "")"
+        if name == nil, count == nil {
+            viewCount.text = nil
+        } else {
+            viewCount.text = "\(name ?? "") : \(count ?? "")"
+        }
+        
     }
     
+    func categoryVariant(_ categories: Variant) {
+        btnVariants.isHidden = true
+        name.font = UIFont.systemFont(ofSize: 15.0, weight: .semibold)
+        date.font = UIFont.systemFont(ofSize: 15.0, weight: .semibold)
+        tax.font = UIFont.systemFont(ofSize: 15.0, weight: .semibold)
+        name.text = "color"
+        date.text = "size"
+        tax.text = "price"
+        
+        nameValue.text = String.init(format: ":    %@", categories.color ?? "")
+        dateValue.text = String.init(format: ":    %d", categories.size ?? 0)
+        taxValue.text = String.init(format: ":    %d", categories.price ?? 0)
+    }
+    
+    @IBAction func btnVariantAction(_ sender: UIButton) {
+        self.delegate?.productVariant(with: index)
+    }
 }

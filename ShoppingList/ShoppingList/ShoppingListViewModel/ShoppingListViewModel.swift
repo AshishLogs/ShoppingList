@@ -24,16 +24,12 @@ public class ShoppingListViewModel {
         }
     }
 
-    var coreDataManager : CoreDataWrapper? {
-        didSet {
-            self.delegate?.updateView()
-        }
-    }
+    var coreDataManager : CoreDataWrapper?
     
     var shoppingModel : ShoppingModel? {
         didSet {
-            DispatchQueue.main.async { [weak self] in
-                self?.coreDataManager = CoreDataWrapper(self?.shoppingModel)
+            DispatchQueue.main.async {
+                self.delegate?.updateView()
             }
         }
     }
@@ -53,9 +49,19 @@ public class ShoppingListViewModel {
         manager?.shoppingList(completion: { [weak self](result) in
             switch result {
             case .success(let model):
-                self?.shoppingModel = model
-            case .failure(let error):
-                debugPrint(error)
+                DispatchQueue.main.async {
+                    self?.coreDataManager = CoreDataWrapper(model)
+                    self?.coreDataManager?.loadData(handler: { (result) in
+                        self?.shoppingModel = ShoppingModel(category: result.categoy, rank: result.rank)
+                    })
+                }
+            case .failure(_):
+                DispatchQueue.main.async {
+                    self?.coreDataManager = CoreDataWrapper()
+                    self?.coreDataManager?.loadData(handler: { (result) in
+                        self?.shoppingModel = ShoppingModel(category: result.categoy, rank: result.rank)
+                    })
+                }
             }
         })
     }
