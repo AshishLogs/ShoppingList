@@ -63,6 +63,20 @@ class ShoppingListReusableCell: UITableViewCell, ReusableView, NibLoadableView {
         nameValue.text = String.init(format: ":    %@", categories.name ?? "")
         dateValue.text = String.init(format: ":    %@", categories.dateAdded ?? "")
         taxValue.text = String.init(format: ":    %0.2f", categories.tax?.value ?? "")
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        
+        let dateFormatterNew = DateFormatter()
+        dateFormatterNew.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatterNew.dateFormat = "dd-MM-yyyy"
+
+        
+        if let date = dateFormatter.date(from: categories.dateAdded ?? "") {
+            dateValue.text = String.init(format: ":    %@", dateFormatterNew.string(from: date))
+        }
+        
     }
     @IBOutlet weak var viewCount: UILabel!
     
